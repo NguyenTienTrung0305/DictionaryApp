@@ -13,7 +13,7 @@ public class Main extends Application {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/gui/HomeApp.fxml"));
             Parent root = loader.load();
             Scene scene = new Scene(root,830,654);
-            //scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+            scene.getStylesheets().add(getClass().getResource("/application/style/style.css").toExternalForm());
 
             primaryStage.setTitle("Dictionary App");
             primaryStage.setScene(scene);

@@ -31,6 +31,7 @@ public class AddNewWordController implements Initializable {
         lbArlertExistsWord.setVisible(false);
     }
 
+    // save new word
     public void SaveNewWord() {
         String targetWord = tfNewWord.getText().toLowerCase().trim();
         String wordMeaning = tfTranslateWord.getText().toLowerCase().trim();

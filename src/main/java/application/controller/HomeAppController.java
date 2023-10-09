@@ -18,6 +18,7 @@ public class HomeAppController implements Initializable {
         showOnSecreen("/application/gui/SearchWord.fxml");
     }
 
+    // set style for anchorpane
     public void showOnSecreen(String path) {
         try {
             System.out.println(getClass().getResource(path));

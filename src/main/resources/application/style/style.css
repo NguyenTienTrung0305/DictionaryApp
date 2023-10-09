@@ -1,0 +1,19 @@
+.list-cell {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-font-family: "Courier New Courier" , monospace;
+}
+.list-cell:hover {
+    -fx-background-color: #00ffff;
+    -fx-cursor: hand;
+}
+
+.myButton {
+    -fx-background-color: #4c8cbe;
+    -fx-cursor: hand;
+    -fx-transition-duration: 0.4s;
+}
+
+.myButton:hover {
+    -fx-background-color: #00ffff;
+}
