@@ -1,0 +1,5 @@
+create table dictionary (
+	wordtarget varchar(40) unique,
+    wordmeaning varchar(40) ,
+    worddescribe text
+);

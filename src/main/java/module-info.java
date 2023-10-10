@@ -3,6 +3,7 @@ module application {
     requires javafx.fxml;
 
     requires org.controlsfx.controls;
+    requires java.sql;
 
     opens application to javafx.fxml;
     opens application.controller to javafx.fxml;

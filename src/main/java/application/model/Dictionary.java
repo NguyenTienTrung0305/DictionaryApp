@@ -1,5 +1,7 @@
 package application.model;
 
+import application.DAO.WordDAO;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -7,7 +9,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class Dictionary {
-    public static final List<Word> dictionary = new ArrayList<>();
+    public static final List<Word> dictionary = WordDAO.getInstance().getWords();
 
     // get list of words sorted alphabetically
     public static List<Word> sortWordAsAnphabetically() {
@@ -20,7 +22,11 @@ public class Dictionary {
     }
 
     // remove word
-    public static void removeWord(Word word){
+    public static void removeWord(Word word) {
+        // remove data in database
+        WordDAO.getInstance().deleteWord(word);
+
+        // remove data in list
         dictionary.remove(word);
     }
 

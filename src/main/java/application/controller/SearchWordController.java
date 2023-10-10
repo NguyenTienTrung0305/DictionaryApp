@@ -4,6 +4,7 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import application.DAO.WordDAO;
 import application.model.Dictionary;
 import application.model.Word;
 import javafx.collections.FXCollections;
@@ -36,7 +37,7 @@ public class SearchWordController implements Initializable {
     @FXML
     private ListView<Word> lvWord = new ListView<>();
 
-    // use to bbserve the changes in the list
+    // use to observe the changes in the list
     private final ObservableList<Word> observableList = FXCollections.observableArrayList();
 
     // hien thi danh sach cac tu
@@ -119,6 +120,10 @@ public class SearchWordController implements Initializable {
                 if (word.getWordTarget().equals(targetWord)) {
                     word.setWordMeaning(adjustMW);
                     word.setDescribeWord(adjustDW);
+
+                    // update data to database
+                    WordDAO.getInstance().updateWord(new Word(targetWord, adjustMW, adjustDW));
+
                     break;
                 }
             }

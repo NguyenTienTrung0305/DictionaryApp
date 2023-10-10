@@ -4,6 +4,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.stream.Collectors;
 
+import application.DAO.WordDAO;
 import application.model.Dictionary;
 import application.model.Word;
 import javafx.fxml.FXML;
@@ -37,20 +38,22 @@ public class AddNewWordController implements Initializable {
         String wordMeaning = tfTranslateWord.getText().toLowerCase().trim();
         String describeWord = taDescribeWord.getText().toLowerCase().trim();
 
-
+        // If the word already exists in the database, do not save it to the database
         if (!Dictionary.dictionary.stream().filter(d -> d.getWordTarget().equals(targetWord)).collect(Collectors.toList()).isEmpty()) {
             lbArlertExistsWord.setText("Existed Word!!");
-            for (Word word : Dictionary.dictionary) {
-                System.out.println(word.getWordTarget());
-            }
         } else {
             if (targetWord.equals("") || wordMeaning.equals("")) {
                 lbArlertExistsWord.setText("Invalid Word!!");
             } else {
+                // save word to list
                 Dictionary.dictionary.add(new Word(targetWord, wordMeaning, describeWord));
+                // save word to database
+                WordDAO.getInstance().insertWord(new Word(targetWord , wordMeaning , describeWord));
                 lbArlertExistsWord.setText("Succesfully!!");
             }
         }
+
+        // refresh screen
         tfNewWord.clear();
         tfTranslateWord.clear();
         taDescribeWord.clear();
