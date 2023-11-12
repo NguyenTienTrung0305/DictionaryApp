@@ -32,18 +32,6 @@ public class Trie {
         return curr.isWord;
     }
 
-    public boolean startsWith(String prefix) {
-        TrieNode curr = root;
-        for (char c : prefix.toCharArray()) {
-            int index = c - 'a';
-            if (curr.children[index] == null) {
-                return false;
-            }
-            curr = curr.children[index];
-        }
-        return true;
-    }
-
     public boolean delete(String word) {
         return delete(root, word, 0);
     }

@@ -1,13 +1,17 @@
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Dictionary {
     private Trie root;
     private Map<String, Explanation> dictionary;
+    private List<String> searchedHistory;
 
     public Dictionary() {
         this.root = new Trie();
         this.dictionary = new HashMap<>();
+        this.searchedHistory = new ArrayList<>();
     }
 
     public void insert(String word, Explanation explanation) {
@@ -16,11 +20,15 @@ public class Dictionary {
     }
 
     public boolean search(String word) {
-        return this.root.search(word);
+        if (this.root.search(word)) {
+            this.searchedHistory.add(word);
+            return true;
+        }
+        return false;
     }
 
-    public boolean startsWith(String prefix) {
-        return this.root.startsWith(prefix);
+    public List<String> startsWith(String prefix) {
+        return this.root.findAllWordsWithPrefix(prefix);
     }
 
     public boolean delete(String word) {
@@ -43,5 +51,6 @@ public class Dictionary {
     public void clear() {
         this.root = new Trie();
         this.dictionary.clear();
+        this.searchedHistory.clear();
     }
 }
