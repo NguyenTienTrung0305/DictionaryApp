@@ -1,2 +1,2 @@
-url = "jdbc:mysql://localhost:3306/dictionaryapp"
+url = "jdbc:mysql://localhost:3306/dictionary"
 username = "root"

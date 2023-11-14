@@ -4,6 +4,8 @@ module application {
 
     requires org.controlsfx.controls;
     requires java.sql;
+    requires freetts;
+    requires javafx.web;
 
     opens application to javafx.fxml;
     opens application.controller to javafx.fxml;

@@ -24,7 +24,7 @@ public class WordDAO implements WordInterface {
             Statement statement = connection.createStatement();
 
             // execute statement
-            String sql = "insert into dictionary "
+            String sql = "insert into av (wordtarget , wordmeaning , worddescribe) "
                     + "values ('" + word.getWordTarget()
                     + "' , '" + word.getWordMeaning()
                     + "' , '" + word.getDescribeWord() + "');";
@@ -46,7 +46,7 @@ public class WordDAO implements WordInterface {
 
             Statement statement = connection.createStatement();
 
-            String sql = "delete from dictionary where wordtarget = '" + word.getWordTarget() + "'";
+            String sql = "delete from av where wordtarget = '" + word.getWordTarget() + "'";
             statement.executeUpdate(sql);
 
             Database.Disconnection(connection);
@@ -62,7 +62,7 @@ public class WordDAO implements WordInterface {
 
             Statement statement = connection.createStatement();
 
-            String sql = "update dictionary set wordtarget = '" + word.getWordTarget() + "',"
+            String sql = "update av set wordtarget = '" + word.getWordTarget() + "',"
                     + "wordmeaning = '" + word.getWordMeaning() + "',"
                     + "worddescribe = '" + word.getDescribeWord() + "'"
                     + "where wordtarget = '" + word.getWordTarget() + "'";
@@ -88,7 +88,7 @@ public class WordDAO implements WordInterface {
             Statement statement = connection.createStatement();
 
             // execute sql
-            String sql = "Select * from dictionary";
+            String sql = "Select * from av";
 
             ResultSet resultSet = statement.executeQuery(sql);
 

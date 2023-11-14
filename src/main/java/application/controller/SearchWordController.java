@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 import application.DAO.WordDAO;
+import application.api.TextToSpeech;
 import application.model.Dictionary;
 import application.model.Word;
 import javafx.collections.FXCollections;
@@ -13,6 +14,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.web.WebEngine;
+import javafx.scene.web.WebView;
 
 public class SearchWordController implements Initializable {
 
@@ -26,13 +29,13 @@ public class SearchWordController implements Initializable {
     private TextField tfTargerWord;
 
     @FXML
-    private TextArea taDescribeWord;
+    private WebView taDescribeWord;
 
     @FXML
     private TextField tfAdjustMeaningWord;
 
     @FXML
-    private TextField tfAdjustDescribeWord;
+    private TextArea tfAdjustDescribeWord;
 
     @FXML
     private ListView<Word> lvWord = new ListView<>();
@@ -109,12 +112,17 @@ public class SearchWordController implements Initializable {
 
     // udapte new word after adjust
     public void ConfirmAdjustWord() {
+
         String targetWord = tfTargerWord.getText().toLowerCase().trim();
         String adjustMW = tfAdjustMeaningWord.getText().toLowerCase().trim();
         String adjustDW = tfAdjustDescribeWord.getText().toLowerCase().trim();
+
         if (!(adjustDW.equals("") || adjustMW.equals(""))) {
             lbMeaningWord.setText(adjustMW);
-            taDescribeWord.setText(adjustDW);
+
+            WebEngine webEngine = taDescribeWord.getEngine();
+            webEngine.loadContent(adjustDW);
+
 
             for (Word word : Dictionary.dictionary) {
                 if (word.getWordTarget().equals(targetWord)) {
@@ -151,7 +159,10 @@ public class SearchWordController implements Initializable {
 
             tfTargerWord.setText("");
             lbMeaningWord.setText("");
-            taDescribeWord.setText("");
+
+
+            WebEngine webEngine = taDescribeWord.getEngine();
+            webEngine.loadContent("");
         }
 
     }
@@ -162,7 +173,18 @@ public class SearchWordController implements Initializable {
         if (selectedWord != null) {
             tfTargerWord.setText(selectedWord.getWordTarget());
             lbMeaningWord.setText(selectedWord.getWordMeaning());
-            taDescribeWord.setText(selectedWord.getDescribeWord());
+
+            WebEngine webEngine = taDescribeWord.getEngine();
+            webEngine.loadContent(selectedWord.getDescribeWord());
         }
+    }
+
+    // speech word
+    public void SpeechWord(){
+        String content = tfTargerWord.getText();
+        if (content.equals("")){
+            return;
+        }
+        TextToSpeech.Speech(content);
     }
 }

@@ -1,5 +1,6 @@
-create table dictionary (
-	wordtarget varchar(40) unique,
-    wordmeaning varchar(40) ,
+create table av (
+    id INTEGER primary key auto_increment,
+	wordtarget text ,
+    wordmeaning text,
     worddescribe text
 );
