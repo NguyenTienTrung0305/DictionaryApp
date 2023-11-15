@@ -47,6 +47,6 @@ public class HomeAppController implements Initializable {
     }
 
     public void GameBtn() {
-        showOnSecreen("/application/Game.fxml");
+        showOnSecreen("/application/gui/Game.fxml");
     }
 }

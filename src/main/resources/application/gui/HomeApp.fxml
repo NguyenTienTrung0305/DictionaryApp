@@ -45,7 +45,7 @@
                         </ImageView>
                     </graphic>
                 </ToggleButton>
-                <ToggleButton layoutX="715.0" layoutY="14.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="myButton" stylesheets="@../style/style.css">
+                <ToggleButton layoutX="715.0" layoutY="14.0" mnemonicParsing="false" onAction="#GameBtn" prefHeight="50.0" prefWidth="50.0" styleClass="myButton" stylesheets="@../style/style.css">
                     <graphic>
                         <ImageView fitHeight="37.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
                             <image>

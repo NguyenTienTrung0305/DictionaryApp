@@ -17,3 +17,27 @@
 .myButton:hover {
     -fx-background-color: #00ffff;
 }
+
+.buttonGame {
+    -fx-border-radius: 8px;
+    -fx-cursor: hand;
+    -fx-translate-y: 0;
+    -fx-transition: -fx-translate-y 0.2s ease-out;
+}
+
+.textFont {
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-font-family: "Courier New Courier" , monospace;
+}
+
+.imgGame {
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+}
+
+.buttonGame:hover {
+    -fx-translate-y: -10;
+}
+
+
