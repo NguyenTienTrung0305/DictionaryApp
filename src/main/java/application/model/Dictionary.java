@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class Dictionary {
     private Trie root;
-    private Map<String, String> dictionary;
+    private Map<String, Explanation> dictionary;
     private List<String> searchedHistory;
 
     public Dictionary() {
@@ -14,7 +14,7 @@ public class Dictionary {
         this.searchedHistory = new ArrayList<>();
     }
 
-    public void insert(String word, String explanation) {
+    public void insert(String word, Explanation explanation) {
         this.root.insert(word);
         this.dictionary.put(word, explanation);
     }
@@ -36,15 +36,15 @@ public class Dictionary {
         return this.root.delete(word);
     }
 
-    public String getExplanation(String word) {
+    public Explanation getExplanation(String word) {
         return this.dictionary.get(word);
     }
 
-    public void setExplanation(String word, String explanation) {
+    public void setExplanation(String word, Explanation explanation) {
         this.dictionary.put(word, explanation);
     }
 
-    public void updateExplanation(String word, String explanation) {
+    public void updateExplanation(String word, Explanation explanation) {
         this.dictionary.replace(word, explanation);
     }
 
