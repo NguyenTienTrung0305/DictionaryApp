@@ -9,21 +9,21 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="582.0" prefWidth="830.0" xmlns="http://javafx.com/javafx/" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.AddNewWordController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="582.0" prefWidth="830.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.AddNewWordController">
     <children>
-        <Label layoutX="36.0" layoutY="38.0" prefHeight="28.0" prefWidth="194.0" text="Enter Your Word" textFill="#b29774">
+        <Label layoutX="36.0" layoutY="38.0" prefHeight="28.0" prefWidth="194.0" text="Enter Your Word">
             <font>
                 <Font name="Bodoni MT Black" size="18.0" />
             </font>
         </Label>
         <TextField fx:id="tfNewWord" layoutX="36.0" layoutY="75.0" prefHeight="25.0" prefWidth="430.0" />
-        <Label layoutX="36.0" layoutY="123.0" prefHeight="28.0" prefWidth="287.0" text="Enter Your Translate Word" textFill="#b29774">
+        <Label layoutX="36.0" layoutY="123.0" prefHeight="28.0" prefWidth="287.0" text="Enter Your Translate Word">
             <font>
                 <Font name="Bodoni MT Black" size="18.0" />
             </font>
         </Label>
         <TextField fx:id="tfTranslateWord" layoutX="36.0" layoutY="158.0" prefHeight="25.0" prefWidth="430.0" />
-        <Label layoutX="36.0" layoutY="202.0" prefHeight="28.0" prefWidth="365.0" text="Enter Your Description Word" textFill="#b29774">
+        <Label layoutX="36.0" layoutY="202.0" prefHeight="28.0" prefWidth="365.0" text="Enter Your Description Word">
             <font>
                 <Font name="Bodoni MT Black" size="18.0" />
             </font>

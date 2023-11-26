@@ -39,11 +39,11 @@ public class HomeAppController implements Initializable {
     }
 
     public void VocabularyBtn() {
-        showOnSecreen("/application/Vocabulary.fxml");
+        showOnSecreen("/application/gui/Vocabulary.fxml");
     }
 
     public void TranslateBtn() {
-        showOnSecreen("/application/Translate.fxml");
+        showOnSecreen("/application/gui/Translate.fxml");
     }
 
     public void GameBtn() {
