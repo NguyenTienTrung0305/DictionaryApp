@@ -46,9 +46,9 @@ public class AddNewWordController implements Initializable {
                 lbArlertExistsWord.setText("Invalid Word!!");
             } else {
                 // save word to list
-                Dictionary.dictionary.add(new Word(targetWord, wordMeaning, describeWord));
+                Dictionary.dictionary.insert(targetWord, new Explanation(wordMeaning, describeWord));
                 // save word to database
-                WordDAO.getInstance().insertWord(new Word(targetWord , wordMeaning , describeWord));
+                WordDAO.getInstance().insertWord(targetWord, new Explanation(wordMeaning, describeWord));
                 lbArlertExistsWord.setText("Succesfully!!");
             }
         }

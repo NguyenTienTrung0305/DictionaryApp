@@ -16,7 +16,7 @@ public class WordDAO implements WordInterface {
 
 
     @Override
-    public void insertWord(Word word) {
+    public void insertWord(String word, Explanation explanation) {
         try {
             Connection connection = Database.getConnection();
 
@@ -25,9 +25,9 @@ public class WordDAO implements WordInterface {
 
             // execute statement
             String sql = "insert into av (wordtarget , wordmeaning , worddescribe) "
-                    + "values ('" + word.getWordTarget()
-                    + "' , '" + word.getWordMeaning()
-                    + "' , '" + word.getDescribeWord() + "');";
+                    + "values ('" + word
+                    + "' , '" + explanation.getWordExplanation()
+                    + "' , '" + explanation.getWordExample() + "');";
 
             statement.executeUpdate(sql);
 
@@ -40,13 +40,13 @@ public class WordDAO implements WordInterface {
     }
 
     @Override
-    public void deleteWord(Word word) {
+    public void deleteWord(String word) {
         try {
             Connection connection = Database.getConnection();
 
             Statement statement = connection.createStatement();
 
-            String sql = "delete from av where wordtarget = '" + word.getWordTarget() + "'";
+            String sql = "delete from av where wordtarget = '" + word + "'";
             statement.executeUpdate(sql);
 
             Database.Disconnection(connection);
@@ -56,16 +56,16 @@ public class WordDAO implements WordInterface {
     }
 
     @Override
-    public void updateWord(Word word) {
+    public void updateWord(String word, Explanation explanation) {
         try {
             Connection connection = Database.getConnection();
 
             Statement statement = connection.createStatement();
 
-            String sql = "update av set wordtarget = '" + word.getWordTarget() + "',"
-                    + "wordmeaning = '" + word.getWordMeaning() + "',"
-                    + "worddescribe = '" + word.getDescribeWord() + "'"
-                    + "where wordtarget = '" + word.getWordTarget() + "'";
+            String sql = "update av set wordtarget = '" + word + "',"
+                    + "wordmeaning = '" + explanation.getWordExplanation() + "',"
+                    + "worddescribe = '" + explanation.getWordExample() + "'"
+                    + "where wordtarget = '" + word + "'";
 
             statement.executeUpdate(sql);
 

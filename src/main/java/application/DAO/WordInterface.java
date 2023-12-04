@@ -5,8 +5,8 @@ import application.model.Word;
 import java.util.List;
 
 public interface WordInterface {
-    public void insertWord(Word word);
-    public void deleteWord(Word word);
-    public void updateWord(Word word);
-    public List<Word> getWords();
+    public void insertWord(String word, Explanation explanation);
+    public void deleteWord(String word);
+    public void updateWord(String word, Explanation explanation);
+    public List<String> getWords();
 }
