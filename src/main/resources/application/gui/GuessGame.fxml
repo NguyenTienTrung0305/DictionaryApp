@@ -18,7 +18,7 @@
     <children>
         <AnchorPane fx:id="containerReady" layoutX="-1.0" layoutY="-5.0" prefHeight="585.0" prefWidth="711.0" visible="false">
             <children>
-                <ImageView fitHeight="588.0" fitWidth="719.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fitHeight="600.0" fitWidth="725.0" layoutX="1.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../icon/tutorial.png" />
                     </image>
@@ -132,27 +132,27 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             </rowConstraints>
             <children>
-                <TextField alignment="CENTER" prefHeight="65.0" prefWidth="71.0" promptText="A">
+                <TextField fx:id="tf1" alignment="CENTER" prefHeight="65.0" prefWidth="71.0" promptText="A">
                     <font>
                         <Font size="30.0" />
                     </font>
                 </TextField>
-                <TextField alignment="CENTER" prefHeight="65.0" prefWidth="71.0" promptText="B" GridPane.columnIndex="1">
+                <TextField fx:id="tf2" alignment="CENTER" prefHeight="65.0" prefWidth="71.0" promptText="B" GridPane.columnIndex="1">
                     <font>
                         <Font size="30.0" />
                     </font>
                 </TextField>
-                <TextField alignment="CENTER" prefHeight="65.0" prefWidth="71.0" promptText="C" GridPane.columnIndex="2">
+                <TextField fx:id="tf3" alignment="CENTER" prefHeight="65.0" prefWidth="71.0" promptText="C" GridPane.columnIndex="2">
                     <font>
                         <Font size="30.0" />
                     </font>
                 </TextField>
-                <TextField alignment="CENTER" prefHeight="65.0" prefWidth="71.0" promptText="D" GridPane.columnIndex="3">
+                <TextField fx:id="tf4" alignment="CENTER" prefHeight="65.0" prefWidth="71.0" promptText="D" GridPane.columnIndex="3">
                     <font>
                         <Font size="30.0" />
                     </font>
                 </TextField>
-                <TextField alignment="CENTER" prefHeight="65.0" prefWidth="71.0" promptText="E" GridPane.columnIndex="4">
+                <TextField fx:id="tf5" alignment="CENTER" prefHeight="65.0" prefWidth="71.0" promptText="E" GridPane.columnIndex="4">
                     <font>
                         <Font size="30.0" />
                     </font>
@@ -163,14 +163,14 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
-        <AnchorPane fx:id="containerWinGuessGame" layoutX="-1.0" prefHeight="586.0" prefWidth="717.0" visible="false">
+        <AnchorPane fx:id="containerWinGuessGame" layoutX="-1.0" prefHeight="588.0" prefWidth="711.0">
             <children>
-                <ImageView fitHeight="612.0" fitWidth="722.0" layoutY="-47.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fitHeight="625.0" fitWidth="726.0" layoutY="-47.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../icon/winguessgame.jpg" />
                     </image>
                 </ImageView>
-                <Button layoutX="302.0" layoutY="437.0" mnemonicParsing="false" onAction="#TryGuessGame" prefHeight="31.0" prefWidth="101.0" style="-fx-background-color: #98FB98;" text="Try Again" textAlignment="CENTER">
+                <Button layoutX="306.0" layoutY="437.0" mnemonicParsing="false" onAction="#TryGuessGame" prefHeight="36.0" prefWidth="101.0" style="-fx-background-color: #98FB98;" text="Try Again" textAlignment="CENTER">
                     <font>
                         <Font name="System Bold" size="15.0" />
                     </font>
@@ -178,7 +178,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
                 </Button>
-                <Button fx:id="btnExitWinGuessGame" layoutX="302.0" layoutY="483.0" mnemonicParsing="false" onAction="#ExitWinGuessGame" prefHeight="31.0" prefWidth="101.0" style="-fx-background-color: #98FB98;" text="Exit" textAlignment="CENTER">
+                <Button fx:id="btnExitWinGuessGame" layoutX="306.0" layoutY="483.0" mnemonicParsing="false" onAction="#ExitWinGuessGame" prefHeight="31.0" prefWidth="101.0" style="-fx-background-color: #98FB98;" text="Exit" textAlignment="CENTER">
                     <font>
                         <Font name="System Bold" size="16.0" />
                     </font>
@@ -188,9 +188,9 @@
                 </Button>
             </children>
         </AnchorPane>
-        <AnchorPane fx:id="containerLoseGuessGame" prefHeight="588.0" prefWidth="722.0">
+        <AnchorPane fx:id="containerLoseGuessGame" prefHeight="588.0" prefWidth="725.0" visible="false">
             <children>
-                <ImageView fitHeight="724.0" fitWidth="748.0" layoutX="-2.0" layoutY="-154.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fitHeight="726.0" fitWidth="752.0" layoutX="-2.0" layoutY="-154.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../icon/loseguessgame.jpg" />
                     </image>
@@ -203,7 +203,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
                 </Button>
-                <Button layoutX="415.0" layoutY="328.0" mnemonicParsing="false" onAction="#ExitWinGuessGame" prefHeight="49.0" prefWidth="101.0" style="-fx-background-color: #98FB98;" text="No" textAlignment="CENTER">
+                <Button layoutX="411.0" layoutY="328.0" mnemonicParsing="false" onAction="#ExitWinGuessGame" prefHeight="49.0" prefWidth="101.0" style="-fx-background-color: #98FB98;" text="No" textAlignment="CENTER">
                     <font>
                         <Font name="System Bold" size="15.0" />
                     </font>
