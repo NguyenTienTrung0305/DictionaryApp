@@ -6,4 +6,6 @@ public interface APIKey {
     String translateHost = "microsoft-translator-text.p.rapidapi.com";
     String speechKey = "81baf70c342f475291fed4dcdb2d9c0c";
     String speechRegion = "southeastasia";
+    String imageKey = "0cc16189bcf34ac386d7d3a910d9d4d4";
+    String imageEndPoint = "https://uetdic.cognitiveservices.azure.com/";
 }
