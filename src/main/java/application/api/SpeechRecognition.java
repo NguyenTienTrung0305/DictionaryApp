@@ -8,7 +8,9 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 
 public class SpeechRecognition implements APIKey {
-    public static String recognizeFromMicrophone(SpeechConfig speechConfig) throws InterruptedException, ExecutionException {
+    public static String recognizeFromMicrophone() throws InterruptedException, ExecutionException {
+        SpeechConfig speechConfig = SpeechConfig.fromSubscription(speechKey, speechRegion);
+        speechConfig.setSpeechRecognitionLanguage("en-US");
         AudioConfig audioConfig = AudioConfig.fromDefaultMicrophoneInput();
         SpeechRecognizer speechRecognizer = new SpeechRecognizer(speechConfig, audioConfig);
 

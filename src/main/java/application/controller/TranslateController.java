@@ -17,6 +17,14 @@ public class TranslateController {
     @FXML
     private Button btnImageToText;
 
+    // nút đổi chiều dịch
+    @FXML
+    private Button btnRotate;
+
+    // nút bắt đầu dịch
+    @FXML
+    private Button btnStartTranslate;
+
     // Vùng chứa english text
     @FXML
     private TextArea taEnglish;
@@ -25,13 +33,30 @@ public class TranslateController {
     @FXML
     private TextArea taVietnamese;
 
+    // vùng chứa link image
+    @FXML
+    private TextArea taLinkImage;
+
+
     // Khi nhấn vào nút nói
-    public void SpeechToText(){};
+    public void SpeechToText() {
+        taEnglish.setText(application.api.SpeechRecognition.recognizeFromMicrophone());
+    }
 
     // Khi nhấn vào nút nghe
-    public void TextToSpeech(){};
+    public void TextToSpeech(){} {
+        application.api.SpeechSynthesis.textToSpeech(taEnglish.getText());
+    }
 
     // Khi nhấn vào nút hình ảnh
-    public void ImageToText(){};
+    public void ImageToText() {
+        taEnglish.setText(application.api.ImageAnalysis.getTextFromImage(taLinkImage.getText()));
+    }
+
+    // khi nhấn nút bắt đầu dịch
+    public void StartTranslate(){};
+
+    // khi nhấn nút đổi chiều dịch
+    public void RotateTranslate(){};
 
 }
