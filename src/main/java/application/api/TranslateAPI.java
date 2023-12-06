@@ -7,7 +7,7 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
 public class TranslateAPI implements APIKey {
-    public String translate(String input, String from, String to) throws IOException, InterruptedException {
+    public static String translate(String input, String from, String to) throws IOException, InterruptedException {
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(translateURI + "to=" + to + "&api-version=3.0&"
                         + "from=" + from + "&profanityAction=NoAction&textType=plain"))

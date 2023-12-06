@@ -54,7 +54,9 @@ public class TranslateController {
     }
 
     // khi nhấn nút bắt đầu dịch
-    public void StartTranslate(){};
+    public void StartTranslate() {
+        taVietnamese.setText(application.api.TranslareAPI.translate(taEnglish.getText(), "vi", "en"));
+    }
 
     // khi nhấn nút đổi chiều dịch
     public void RotateTranslate(){};
