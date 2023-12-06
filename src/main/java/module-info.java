@@ -6,6 +6,7 @@ module application {
     requires java.sql;
     requires freetts;
     requires javafx.web;
+    requires java.net.http;
 
     opens application to javafx.fxml;
     opens application.controller to javafx.fxml;
