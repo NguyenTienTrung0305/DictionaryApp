@@ -17,6 +17,14 @@ public class TranslateController {
     @FXML
     private Button btnImageToText;
 
+    // nút đổi chiều dịch
+    @FXML
+    private Button btnRotate;
+
+    // nút bắt đầu dịch
+    @FXML
+    private Button btnStartTranslate;
+
     // Vùng chứa english text
     @FXML
     private TextArea taEnglish;
@@ -24,6 +32,11 @@ public class TranslateController {
     // Vùng chứa vietnamese text
     @FXML
     private TextArea taVietnamese;
+
+    // vùng chứa link image
+    @FXML
+    private TextArea taLinkImage;
+
 
     // Khi nhấn vào nút nói
     public void SpeechToText(){};
@@ -33,5 +46,11 @@ public class TranslateController {
 
     // Khi nhấn vào nút hình ảnh
     public void ImageToText(){};
+
+    // khi nhấn nút bắt đầu dịch
+    public void StartTranslate(){};
+
+    // khi nhấn nút đổi chiều dịch
+    public void RotateTranslate(){};
 
 }

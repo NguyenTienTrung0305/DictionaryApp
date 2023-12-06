@@ -4,6 +4,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 
@@ -92,8 +94,30 @@ public class GuessGameController implements Initializable {
     @FXML
     private AnchorPane containerInGame;
 
+    @FXML
+    private TextField tf1;
+
+    @FXML
+    private TextField tf2;
+
+    @FXML
+    private TextField tf3;
+
+    @FXML
+    private TextField tf4;
+
+    @FXML
+    private TextField tf5;
+
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
+        tf1.setOnKeyPressed(event -> handleTextFieldKeyPress(event, tf2));
+        tf2.setOnKeyPressed(event -> handleTextFieldKeyPress(event, tf3));
+        tf3.setOnKeyPressed(event -> handleTextFieldKeyPress(event, tf4));
+        tf4.setOnKeyPressed(event -> handleTextFieldKeyPress(event, tf5));
+
         containerWinGuessGame.setVisible(false);
         containerLoseGuessGame.setVisible(false);
         containerReady.setVisible(true);
@@ -120,6 +144,7 @@ public class GuessGameController implements Initializable {
 
 
     public void CheckGuessWord() {
+        tf1.requestFocus();
         System.out.print(radWord + " ");
         String guessword = "";
         for (int i = 0; i < 5; i++) {
@@ -195,12 +220,13 @@ public class GuessGameController implements Initializable {
 
     // click try again
     public void TryGuessGame() {
+        tf1.requestFocus();
         generatedRadWord();
         containerWinGuessGame.setVisible(false);
         containerLoseGuessGame.setVisible(false);
         numbersOfGuess = 1;
         checkGuessWord = false;
-        for (int i = 0; i < 15; i++) {
+        for (int i = 0; i < 25; i++) {
             gridCheck.getChildren().get(i).setStyle("-fx-background-color: #CCFFFF;");
         }
     }
@@ -212,6 +238,13 @@ public class GuessGameController implements Initializable {
         checkGuessWord = false;
         numbersOfGuess = 1;
         btnCheckGuessWord.setDisable(true);
+    }
+
+    private void handleTextFieldKeyPress(KeyEvent event, TextField nextTextField) {
+        if (event.getCode() == KeyCode.ENTER) {
+            // Di chuyển focus đến TextField tiếp theo
+            nextTextField.requestFocus();
+        }
     }
 
 }

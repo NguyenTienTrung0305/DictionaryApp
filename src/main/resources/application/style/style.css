@@ -9,13 +9,17 @@
 }
 
 .myButton {
-    -fx-background-color: #4c8cbe;
+    -fx-background-color: #fff;
     -fx-cursor: hand;
     -fx-transition-duration: 0.4s;
 }
 
 .myButton:hover {
-    -fx-background-color: #00ffff;
+    -fx-background-color: #8FBC8F;
+}
+
+.myButton:selected {
+    -fx-background-color: #008080;
 }
 
 .buttonGame {
