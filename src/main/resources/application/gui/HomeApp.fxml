@@ -59,6 +59,6 @@
                 <Line endX="650.0" endY="5.0" layoutX="180.0" layoutY="70.0" opacity="0.5" startX="-180.0" startY="5.0" strokeType="OUTSIDE" strokeWidth="0.8" />
             </children>
         </AnchorPane>
-        <AnchorPane fx:id="container" layoutX="-14.0" layoutY="69.0" prefHeight="588.0" prefWidth="830.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="69.0" />
+        <AnchorPane fx:id="container" layoutX="-14.0" layoutY="69.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="580.0" prefWidth="830.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="69.0" />
     </children>
 </AnchorPane>

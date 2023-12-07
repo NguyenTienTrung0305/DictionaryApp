@@ -1,5 +1,7 @@
 package application.controller;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -8,6 +10,7 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
+import org.w3c.dom.Text;
 
 
 import java.net.URL;
@@ -140,10 +143,38 @@ public class GuessGameController implements Initializable {
         containerInGame.setVisible(true);
         gridGuessWord.setVisible(true);
         btnCheckGuessWord.setVisible(true);
+        addTextLimitedGuessWordGrid();
+    }
+
+    public void addTextLimited(TextField textField, int max) {
+        textField.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
+                if (textField.getText().contains(" ")) {
+                    textField.setText(textField.getText().replaceAll(" ", ""));
+                }
+                if (textField.getText().length() > max) {
+                    String string = textField.getText();
+                    string = String.valueOf(string.charAt(string.length() - 1));
+                    textField.setText(string);
+                }
+            }
+        });
+    }
+
+    public void addTextLimitedGuessWordGrid() {
+        addTextLimited(tf1, 1);
+        addTextLimited(tf2, 1);
+        addTextLimited(tf3, 1);
+        addTextLimited(tf4, 1);
+        addTextLimited(tf5, 1);
     }
 
 
     public void CheckGuessWord() {
+        if (!isGridGuessWordFilled()) {
+            return;
+        }
         tf1.requestFocus();
         System.out.print(radWord + " ");
         String guessword = "";
@@ -177,8 +208,17 @@ public class GuessGameController implements Initializable {
         }
     }
 
+    public boolean isGridGuessWordFilled() {
+        for (int i = 0; i < 5; i++) {
+            TextField textField = (TextField) gridGuessWord.getChildren().get(i);
+            if (textField.getText().isEmpty()) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     public static Map<Integer, Character> logicGuessGame(String a, String b) {
-        // abcde aeffc
         Map<Character, Integer> m = new HashMap<>();
         Map<Integer, Character> m2 = new HashMap<>();
 
@@ -246,5 +286,4 @@ public class GuessGameController implements Initializable {
             nextTextField.requestFocus();
         }
     }
-
 }

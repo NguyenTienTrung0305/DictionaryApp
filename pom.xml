@@ -70,7 +70,26 @@
             <version>1.2.2</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/com.microsoft.cognitiveservices.speech/client-sdk -->
+        <dependency>
+            <groupId>com.microsoft.cognitiveservices.speech</groupId>
+            <artifactId>client-sdk</artifactId>
+            <version>1.33.0</version>
+        </dependency>
 
+        <!-- https://mvnrepository.com/artifact/com.azure/azure-ai-vision-imageanalysis -->
+        <dependency>
+            <groupId>com.azure</groupId>
+            <artifactId>azure-ai-vision-imageanalysis</artifactId>
+            <version>0.15.1-beta.1</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.azure/azure-core-http-netty -->
+        <dependency>
+            <groupId>com.azure</groupId>
+            <artifactId>azure-core-http-netty</artifactId>
+            <version>1.13.10</version>
+        </dependency>
     </dependencies>
 
     <build>

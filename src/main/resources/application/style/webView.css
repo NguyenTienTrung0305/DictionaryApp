@@ -1,0 +1,77 @@
+@font-face {
+    font-family: 'Merriweather';
+    src: local('Merriweather Regular'), url('../font/Merriweather/Merriweather-Regular.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Merriweather';
+    src: local('Merriweather Italic'), url('../font/Merriweather/Merriweather-Italic.ttf') format('truetype');
+    font-style: italic;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Merriweather';
+    src: local('Merriweather Bold'), url('../font/Merriweather/Merriweather-Bold.ttf') format('truetype');
+    font-style: normal;
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'Noto Serif';
+    src: local('Noto Serif'), url('../font/Noto_Serif/NotoSerif-Regular.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Noto Serif';
+    src: local('Noto Serif'), url('../font/Noto_Serif/NotoSerif-Italic.ttf') format('truetype');
+    font-style: italic;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Noto Serif';
+    src: local('Noto Serif'), url('../font/Noto_Serif/NotoSerif-Bold.ttf') format('truetype');
+    font-style: normal;
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'Noto Serif';
+    src: local('Noto Serif'), url('../font/Noto_Serif/NotoSerif-BoldItalic.ttf') format('truetype');
+    font-style: italic;
+    font-weight: bold;
+}
+
+body {
+    background-color: lightblue;
+    font-family: Merriweather, serif;
+}
+
+h1 {
+    text-align: center;
+}
+
+h3 {
+    font-family: 'Noto Serif', serif;
+}
+
+
+
+ul {
+    padding-left: 20px;
+    margin: 10px;
+}
+
+
+ul li {
+    position: relative;
+    padding-bottom: 10px;
+}
+
+
+

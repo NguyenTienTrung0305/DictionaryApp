@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="720.0" style="-fx-background-color: lightblue;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.TypoGameController">
+   <children>
+      <AnchorPane fx:id="readyTypoGameContainer" layoutY="14.0" prefHeight="540.0" prefWidth="720.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fitHeight="217.0" fitWidth="215.0" layoutX="68.0" layoutY="113.0" opacity="0.8" pickOnBounds="true" preserveRatio="true" rotate="8.1">
+               <image>
+                  <Image url="@../icon/background-svgrepo-com.png" />
+               </image>
+            </ImageView>
+            <Text layoutX="264.0" layoutY="502.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Decide whether a word has typo or not." wrappingWidth="348.1368103027344">
+               <font>
+                  <Font name="System Italic" size="18.0" />
+               </font>
+            </Text>
+            <Label alignment="CENTER" contentDisplay="TEXT_ONLY" layoutX="192.0" layoutY="433.0" lineSpacing="10.0" prefHeight="50.0" prefWidth="143.0" text="Quick tutorial&#10;&#10;">
+               <font>
+                  <Font name="System Italic" size="24.0" />
+               </font>
+            </Label>
+            <Button fx:id="startTypoGameButton" layoutX="327.0" layoutY="271.0" mnemonicParsing="false" onAction="#startTypoGame" text="Start" wrapText="true">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font></Button>
+            <Label alignment="CENTER" contentDisplay="TEXT_ONLY" layoutX="288.0" layoutY="221.0" lineSpacing="10.0" prefHeight="50.0" prefWidth="143.0" text="New Game&#10;&#10;">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Text fx:id="initTypoGameWarningText" fill="RED" layoutX="207.0" layoutY="377.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please save some word into favorite words list befor playing this game!" visible="false" wrappingWidth="305.0">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="inTypoGameContainer" prefHeight="540.0" prefWidth="720.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Button fx:id="typoWordButton" contentDisplay="GRAPHIC_ONLY" layoutX="240.0" layoutY="400.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#clickTypoWordButton" prefHeight="35.0" prefWidth="35.0" text="Incorrect">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icon/error-svgrepo-com.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Button fx:id="correctWordButton" contentDisplay="GRAPHIC_ONLY" layoutX="425.0" layoutY="400.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#clickCorrectWordButton" prefHeight="35.0" prefWidth="35.0" text="Correct">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icon/correct-svgrepo-com%20(1).png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Text fx:id="wordText" layoutX="260.0" layoutY="308.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Word" textAlignment="CENTER" wrappingWidth="200.0">
+               <font>
+                  <Font name="System Bold Italic" size="24.0" />
+               </font>
+            </Text>
+            <Label alignment="CENTER" contentDisplay="TEXT_ONLY" layoutX="129.0" layoutY="111.0" lineSpacing="10.0" prefHeight="25.0" prefWidth="100.0" text="Score">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Text fx:id="scoreText" layoutX="154.0" layoutY="172.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10" textAlignment="CENTER" wrappingWidth="50.0">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+            <Text fx:id="meaningText" layoutX="393.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Meaning" wrappingWidth="250.0">
+               <font>
+                  <Font name="System Italic" size="18.0" />
+               </font>
+            </Text>
+            <ProgressBar fx:id="progressBar" layoutX="250.0" layoutY="450.0" prefHeight="18.0" prefWidth="215.0" progress="0.0" />
+            <ImageView fitHeight="111.0" fitWidth="126.0" layoutX="93.0" layoutY="324.0" opacity="0.9" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icon/person-reading-a-book-question-mark-svgrepo-com.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="150.0" fitWidth="143.0" layoutX="500.0" layoutY="298.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icon/supporting-person-diagonal-svgrepo-com.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="typoGameOverContainer" prefHeight="600.0" prefWidth="800.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Button layoutX="310.0" layoutY="436.0" mnemonicParsing="false" onAction="#clickReplayButton" prefHeight="30.0" prefWidth="100.0" text="Replay">
+               <graphic>
+                  <ImageView fitHeight="34.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icon/replay.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font></Button>
+            <ImageView fitHeight="256.0" fitWidth="267.0" layoutX="232.0" layoutY="121.0" opacity="0.8" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icon/goals-finish-svgrepo-com.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

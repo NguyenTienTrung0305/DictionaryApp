@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.web.WebView?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.VocabularyController">
+   <children>
+      <TabPane prefHeight="600.0" prefWidth="800.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="30.0">
+         <tabs>
+            <Tab fx:id="favoriteWordsTab" closable="false" onSelectionChanged="#selectFavoriteWordsTab" text="Favorite Words">
+               <content>
+                  <AnchorPane>
+                     <children>
+                        <SplitPane dividerPositions="0.25" prefHeight="570.6666666666666" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <items>
+                              <AnchorPane SplitPane.resizableWithParent="false">
+                                 <children>
+                                    <ListView fx:id="listViewFavoriteWords" layoutX="-7.0" onMouseClicked="#clickFavoriteWordsListView" prefHeight="518.0" prefWidth="186.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="567.0" prefWidth="111.0" SplitPane.resizableWithParent="false">
+                                 <children>
+                                    <WebView fx:id="favoriteWordView" layoutX="1.0" layoutY="-2.0" prefHeight="518.0" prefWidth="564.6666666666666" stylesheets="@../style/style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                 </children>
+                              </AnchorPane>
+                           </items>
+                        </SplitPane>
+                        <Button layoutX="710.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#clickBinButtonFavoriteWordsTab" prefHeight="35.0" prefWidth="35.0">
+                           <graphic>
+                              <ImageView fitHeight="25.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../icon/bin.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="recentWordsTab" closable="false" onSelectionChanged="#selectRecentWordsTab" text="Recently Searched Words">
+               <content>
+                  <AnchorPane>
+                     <children>
+                        <SplitPane dividerPositions="0.25" prefHeight="520.6666666666666" prefWidth="760.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <items>
+                              <AnchorPane prefHeight="613.0" prefWidth="196.0" SplitPane.resizableWithParent="false">
+                                 <children>
+                                    <ListView fx:id="listViewRecentWords" layoutX="-7.0" onMouseClicked="#clickRecentWordsListView" prefHeight="518.0" prefWidth="186.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="524.0" prefWidth="565.0" SplitPane.resizableWithParent="false">
+                                 <children>
+                                    <WebView fx:id="recentWordView" layoutY="6.0" prefHeight="518.0" prefWidth="564.6666666666666" stylesheets="@../style/style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <styleClass>
+                                          <String fx:value="web-view" />
+                                          <String fx:value="web-view" />
+                                       </styleClass></WebView>
+                                 </children>
+                              </AnchorPane>
+                           </items>
+                        </SplitPane>
+                        <Button layoutX="710.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#clickBinButtonRecentWordsTab" prefHeight="35.0" prefWidth="35.0">
+                           <graphic>
+                              <ImageView fitHeight="25.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../icon/bin.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
