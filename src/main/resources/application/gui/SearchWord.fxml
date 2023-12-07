@@ -86,7 +86,7 @@
                                 <Font size="14.0" />
                             </font>
                         </TextField>
-                        <TextArea fx:id="tfAdjustDescribeWord" layoutX="7.0" layoutY="81.0" prefHeight="212.0" prefWidth="304.0" promptText="Enter discribe word" />
+                        <TextArea fx:id="tfAdjustDescribeWord" layoutX="7.0" layoutY="81.0" prefHeight="212.0" prefWidth="304.0" promptText="Enter describe word" />
                         <Button fx:id="btnConfirm" layoutX="190.0" layoutY="287.0" mnemonicParsing="false" onAction="#ConfirmAdjustWord" prefHeight="37.0" prefWidth="103.0" style="-fx-background-color: transparent;">
                             <graphic>
                                 <ImageView fitHeight="46.0" fitWidth="92.0" pickOnBounds="true" preserveRatio="true">

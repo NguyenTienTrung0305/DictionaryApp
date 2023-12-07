@@ -2,9 +2,11 @@ package application.controller;
 
 import java.net.URL;
 import java.util.List;
+import java.util.Optional;
 import java.util.ResourceBundle;
 import java.util.concurrent.ExecutionException;
 import application.DAO.WordDAO;
+import application.alerts.Alerts;
 import application.api.TextToSpeech;
 import application.model.Dictionary;
 import application.model.Word;
@@ -44,6 +46,8 @@ public class SearchWordController implements Initializable {
     @FXML
     private ListView<Word> lvWord = new ListView<>();
 
+    private Alerts alerts = new Alerts();
+
     // use to observe the changes in the list
     private final ObservableList<Word> observableList = FXCollections.observableArrayList();
 
@@ -81,6 +85,7 @@ public class SearchWordController implements Initializable {
     // hien thi dialog chinh sua tu khi an vao icon chinh sua
     public void ShowAdjustDialog() {
         apAdjustDialog.setVisible(true);
+        tfAdjustMeaningWord.setText(lbMeaningWord.getText());
     }
 
     // Display list of words according to client request
@@ -117,30 +122,40 @@ public class SearchWordController implements Initializable {
     // udapte new word after adjust
     public void ConfirmAdjustWord() {
 
-        String targetWord = tfTargerWord.getText().toLowerCase().trim();
-        String adjustMW = tfAdjustMeaningWord.getText().toLowerCase().trim();
-        String adjustDW = tfAdjustDescribeWord.getText().toLowerCase().trim();
+        Alert alertConfirmation = alerts.alertConfirmation("Adjust word", "Bạn chắc chắn muốn sửa từ này?");
+        Optional<ButtonType> option = alertConfirmation.showAndWait();
 
-        if (!(adjustDW.equals("") || adjustMW.equals(""))) {
-            lbMeaningWord.setText(adjustMW);
-
-            WebEngine webEngine = taDescribeWord.getEngine();
-            webEngine.loadContent(adjustDW);
+        if (option.get() == ButtonType.OK) {
+            String targetWord = tfTargerWord.getText().toLowerCase().trim();
+            String adjustMW = tfAdjustMeaningWord.getText().toLowerCase().trim();
+            String adjustDW = tfAdjustDescribeWord.getText().toLowerCase().trim();
 
 
-            for (Word word : Dictionary.dictionary) {
-                if (word.getWordTarget().equals(targetWord)) {
-                    word.setWordMeaning(adjustMW);
-                    word.setDescribeWord(adjustDW);
 
-                    // update data to database
-                    WordDAO.getInstance().updateWord(new Word(targetWord, adjustMW, adjustDW));
+            if (!(adjustDW.equals("") || adjustMW.equals(""))) {
+                lbMeaningWord.setText(adjustMW);
 
-                    break;
+                WebEngine webEngine = taDescribeWord.getEngine();
+                webEngine.loadContent(adjustDW);
+
+
+                for (Word word : Dictionary.dictionary) {
+                    if (word.getWordTarget().equals(targetWord)) {
+                        word.setWordMeaning(adjustMW);
+                        word.setDescribeWord(adjustDW);
+
+                        // update data to database
+                        WordDAO.getInstance().updateWord(new Word(targetWord, adjustMW, adjustDW));
+
+                        break;
+                    }
                 }
             }
+            if (adjustMW.equals("") || adjustDW.equals("")) {
+                alerts.showAlertInfo("Information", "Thay đổi không được công nhận!\n Bạn cần điền đầy đủ nghĩa của nó!");
+            }
+            apAdjustDialog.setVisible(false);
         }
-        apAdjustDialog.setVisible(false);
     }
 
 
@@ -199,7 +214,7 @@ public class SearchWordController implements Initializable {
     }
 
     // speech word
-    public void SpeechWord(){
+    public void SpeechWord() {
         try {
             application.api.SpeechSynthesis.textToSpeech(tfTargerWord.getText());
         } catch (InterruptedException e) {
