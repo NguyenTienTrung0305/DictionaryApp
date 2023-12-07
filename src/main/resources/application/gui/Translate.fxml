@@ -64,7 +64,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="btnStartTranslate" layoutX="322.0" layoutY="315.0" mnemonicParsing="false" onAction="#StartTranslate" prefHeight="31.0" prefWidth="64.0" text="Transalte">
+      <Button fx:id="btnStartTranslate" layoutX="322.0" layoutY="315.0" mnemonicParsing="false" onAction="#StartTranslate" prefHeight="31.0" prefWidth="64.0" text="Translate">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
