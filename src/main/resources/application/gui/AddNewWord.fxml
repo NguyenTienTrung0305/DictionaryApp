@@ -42,9 +42,9 @@
             <Cursor fx:constant="HAND" />
          </cursor>
         </Button>
-        <Label fx:id="lbArlertExistsWord" layoutX="141.0" layoutY="494.0" prefHeight="48.0" prefWidth="460.0" textFill="#b29774" visible="false">
+        <Label fx:id="lbArlertExistsWord" layoutX="141.0" layoutY="481.0" prefHeight="61.0" prefWidth="460.0" textFill="WHITE" visible="false">
             <font>
-                <Font name="Bodoni MT Black" size="14.0" />
+                <Font name="Bodoni MT Black" size="15.0" />
             </font>
         </Label>
     </children>

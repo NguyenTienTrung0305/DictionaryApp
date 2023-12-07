@@ -1,10 +1,16 @@
 package application.controller;
 
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 
-public class TranslateController {
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+import java.util.concurrent.ExecutionException;
+
+public class TranslateController implements Initializable {
     // nút nói
     @FXML
     private Button btnSpeechToText;
@@ -37,20 +43,57 @@ public class TranslateController {
     @FXML
     private TextArea taLinkImage;
 
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+
+    }
 
     // Khi nhấn vào nút nói
-    public void SpeechToText(){};
+    public void SpeechToText() {
+        try {
+            taEnglish.setText(application.api.SpeechRecognition.recognizeFromMicrophone());
+
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        } catch (ExecutionException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
     // Khi nhấn vào nút nghe
-    public void TextToSpeech(){};
+    public void textToSpeech() {
+        try {
+            application.api.SpeechSynthesis.textToSpeech(taEnglish.getText());
+        } catch (InterruptedException e) {
+//            throw new RuntimeException(e);
+        } catch (ExecutionException e) {
+//            throw new RuntimeException(e);
+        }
+    }
 
-    // Khi nhấn vào nút hình ảnh
-    public void ImageToText(){};
+//     Khi nhấn vào nút hình ảnh
+    public void ImageToText() {
+        try {
+            taEnglish.setText(application.api.ImageAnalysis.getTextFromImage(taLinkImage.getText()));
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
 
     // khi nhấn nút bắt đầu dịch
-    public void StartTranslate(){};
+    public void StartTranslate() {
+        try {
+            taVietnamese.setText(application.api.TranslateAPI.translate(taEnglish.getText(), "en", "vi"));
+        } catch (IOException e) {
+//            throw new RuntimeException(e);
+        } catch (InterruptedException e) {
+//            throw new RuntimeException(e);
+        }
+    }
 
     // khi nhấn nút đổi chiều dịch
     public void RotateTranslate(){};
+
+
 
 }

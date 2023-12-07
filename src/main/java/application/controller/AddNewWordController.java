@@ -57,7 +57,7 @@ public class AddNewWordController implements Initializable {
         tfNewWord.clear();
         tfTranslateWord.clear();
         taDescribeWord.clear();
-        lbArlertExistsWord.setTextFill(Paint.valueOf("#2ecc71"));
+//        lbArlertExistsWord.setTextFill(Paint.valueOf("#2ecc71"));
         lbArlertExistsWord.setVisible(true);
     }
 }

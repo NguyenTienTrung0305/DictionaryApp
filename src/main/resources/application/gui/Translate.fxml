@@ -29,7 +29,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button fx:id="btnTextToSpeech" layoutX="104.0" layoutY="88.0" mnemonicParsing="false" onAction="#TextToSpeech" prefHeight="31.0" prefWidth="52.0" styleClass="buttonGame" stylesheets="@../style/style.css">
+      <Button fx:id="btnTextToSpeech" layoutX="104.0" layoutY="88.0" mnemonicParsing="false" onAction="#textToSpeech" prefHeight="31.0" prefWidth="52.0" styleClass="buttonGame" stylesheets="@../style/style.css">
          <graphic>
             <ImageView fitHeight="21.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
                <image>

@@ -3,6 +3,7 @@ package application.controller;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.concurrent.ExecutionException;
 
 import application.DAO.WordDAO;
 import application.api.TextToSpeech;
@@ -181,10 +182,12 @@ public class SearchWordController implements Initializable {
 
     // speech word
     public void SpeechWord(){
-        String content = tfTargerWord.getText();
-        if (content.equals("")){
-            return;
+        try {
+            application.api.SpeechSynthesis.textToSpeech(tfTargerWord.getText());
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        } catch (ExecutionException e) {
+            throw new RuntimeException(e);
         }
-        TextToSpeech.Speech(content);
     }
 }
