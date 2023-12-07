@@ -16,7 +16,7 @@
 
 <AnchorPane prefHeight="498.0" prefWidth="711.0" style="-fx-background-color: CCFFFF;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.GuessGameController">
     <children>
-        <AnchorPane fx:id="containerReady" layoutX="-1.0" layoutY="-5.0" prefHeight="585.0" prefWidth="711.0">
+        <AnchorPane fx:id="containerReady" layoutX="-1.0" layoutY="-5.0" prefHeight="585.0" prefWidth="711.0" visible="false">
             <children>
                 <ImageView fitHeight="599.0" fitWidth="729.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
                     <image>
@@ -163,24 +163,16 @@
             <cursor>
                 <Cursor fx:constant="HAND" />
             </cursor></Button>
-        <AnchorPane fx:id="containerWinGuessGame" layoutX="-1.0" prefHeight="590.0" prefWidth="725.0" visible="false">
+        <AnchorPane fx:id="containerWinGuessGame" layoutX="-1.0" prefHeight="590.0" prefWidth="725.0">
             <children>
-                <ImageView fitHeight="632.0" fitWidth="742.0" layoutX="-13.0" layoutY="-37.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fitHeight="617.0" fitWidth="729.0" layoutX="1.0" layoutY="-26.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../icon/winguessgame.jpg" />
                     </image>
                 </ImageView>
-                <Button layoutX="300.0" layoutY="461.0" mnemonicParsing="false" onAction="#TryGuessGame" prefHeight="36.0" prefWidth="101.0" style="-fx-background-color: #98FB98;" text="Try Again" textAlignment="CENTER">
+                <Button layoutX="307.0" layoutY="464.0" mnemonicParsing="false" onAction="#TryGuessGame" prefHeight="36.0" prefWidth="101.0" style="-fx-background-color: #98FB98;" text="Try Again" textAlignment="CENTER">
                     <font>
                         <Font name="System Bold" size="15.0" />
-                    </font>
-                    <cursor>
-                        <Cursor fx:constant="HAND" />
-                    </cursor>
-                </Button>
-                <Button fx:id="btnExitWinGuessGame" layoutX="299.0" layoutY="503.0" mnemonicParsing="false" onAction="#ExitWinGuessGame" prefHeight="31.0" prefWidth="101.0" style="-fx-background-color: #98FB98;" text="Exit" textAlignment="CENTER">
-                    <font>
-                        <Font name="System Bold" size="16.0" />
                     </font>
                     <cursor>
                         <Cursor fx:constant="HAND" />
@@ -190,7 +182,7 @@
         </AnchorPane>
         <AnchorPane fx:id="containerLoseGuessGame" prefHeight="590.0" prefWidth="727.0" visible="false">
             <children>
-                <ImageView fitHeight="632.0" fitWidth="742.0" layoutX="-14.0" layoutY="-37.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fitHeight="617.0" fitWidth="729.0" layoutY="-26.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../icon/loseguessgame.jpg" />
                     </image>
