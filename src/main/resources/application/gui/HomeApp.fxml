@@ -6,42 +6,43 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Line?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="654.0" prefWidth="830.0" style="-fx-background-color: #4c8cbe;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.HomeAppController">
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="657.0" prefWidth="830.0" style="-fx-background-color: #4c8cbe;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.HomeAppController">
     <children>
         <AnchorPane prefHeight="75.0" prefWidth="830.0" style="-fx-background-color: #fff;" AnchorPane.topAnchor="0.0">
+
             <children>
                 <ToggleButton fx:id="tgSearch" layoutX="43.0" layoutY="14.0" mnemonicParsing="false" onAction="#SearchBtn" prefHeight="53.0" prefWidth="51.0" styleClass="myButton" stylesheets="@../style/style.css">
                     <graphic>
-                        <ImageView fitHeight="37.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="42.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@../icon/search.png" />
                             </image>
                         </ImageView>
                     </graphic>
                 </ToggleButton>
-                <ToggleButton fx:id="tgAdd" layoutX="203.0" layoutY="14.0" mnemonicParsing="false" onAction="#AddBtn" prefHeight="53.0" prefWidth="51.0" styleClass="myButton" stylesheets="@../style/style.css">
+                <ToggleButton fx:id="tgAdd" layoutX="209.0" layoutY="14.0" mnemonicParsing="false" onAction="#AddBtn" prefHeight="53.0" prefWidth="51.0" styleClass="myButton" stylesheets="@../style/style.css">
                     <graphic>
-                        <ImageView fitHeight="37.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@../icon/add.png" />
                             </image>
                         </ImageView>
                     </graphic>
                 </ToggleButton>
-                <ToggleButton fx:id="tgVoca" layoutX="555.0" layoutY="14.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="51.0" styleClass="myButton" stylesheets="@../style/style.css">
+                <ToggleButton fx:id="tgVoca" layoutX="555.0" layoutY="11.0" mnemonicParsing="false" onAction="#VocabularyBtn" prefHeight="53.0" prefWidth="51.0" styleClass="myButton" stylesheets="@../style/style.css">
                     <graphic>
-                        <ImageView fitHeight="37.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="38.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@../icon/vocabulary.png" />
                             </image>
                         </ImageView>
                     </graphic>
                 </ToggleButton>
-                <ToggleButton fx:id="tgTranslate" layoutX="389.0" layoutY="14.0" mnemonicParsing="false" onAction="#TranslateBtn" prefHeight="53.0" prefWidth="51.0" styleClass="myButton" stylesheets="@../style/style.css">
+                <ToggleButton fx:id="tgTranslate" layoutX="386.0" layoutY="11.0" mnemonicParsing="false" onAction="#TranslateBtn" prefHeight="53.0" prefWidth="51.0" styleClass="myButton" stylesheets="@../style/style.css">
                     <graphic>
-                        <ImageView fitHeight="37.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="42.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@../icon/translate.png" />
+                                <Image url="@../icon/microsoft-translator-svgrepo-com.png" />
                             </image>
                         </ImageView>
                     </graphic>
@@ -58,6 +59,6 @@
                 <Line endX="650.0" endY="5.0" layoutX="180.0" layoutY="70.0" opacity="0.5" startX="-180.0" startY="5.0" strokeType="OUTSIDE" strokeWidth="0.8" />
             </children>
         </AnchorPane>
-        <AnchorPane fx:id="container" layoutX="-2.0" layoutY="75.0" prefHeight="582.0" prefWidth="830.0" />
+        <AnchorPane fx:id="container" layoutX="-14.0" layoutY="69.0" prefHeight="588.0" prefWidth="830.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="69.0" />
     </children>
 </AnchorPane>

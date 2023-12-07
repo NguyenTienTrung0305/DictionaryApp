@@ -44,4 +44,10 @@
     -fx-translate-y: -10;
 }
 
+.web-view {
+    -fx-context-menu-enabled: false;
+}
 
+.replayButton {
+
+}

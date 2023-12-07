@@ -17,6 +17,9 @@ public class GameController implements Initializable {
     @FXML
     private Button btnExitGame;
 
+    @FXML
+    private AnchorPane choicesContainer;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         containerGame.setVisible(false);
@@ -37,12 +40,19 @@ public class GameController implements Initializable {
     }
 
     public void StartGuessGame(){
+        choicesContainer.setVisible(false);
         showOnSecreen("/application/gui/GuessGame.fxml");
+    }
+
+    public void startTypoGame() {
+        choicesContainer.setVisible(false);
+        showOnSecreen("/application/gui/TypoGame.fxml");
     }
 
     public void ExitGame(){
         containerGame.setVisible(false);
         btnExitGame.setVisible(false);
+        choicesContainer.setVisible(true);
     }
 
 }

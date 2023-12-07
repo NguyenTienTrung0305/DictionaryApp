@@ -15,8 +15,8 @@ import java.util.*;
 
 
 public class GuessGameController implements Initializable {
-    private List<String> radWords = Arrays.asList("Aboil", "Abort", "Abuse", "Acorn", "Adapt", "Admin",
-            "Admit", "Admen", "Affix", "Agree", "Ahead", "Album", "Alley", "Allot", "Allow", "Amate", "Amaze"
+    private final List<String> radWords = Arrays.asList("Aboil", "Abort", "Abuse", "Acorn", "Adapt", "Admin"
+            , "Admit", "Admen", "Affix", "Agree", "Ahead", "Album", "Alley", "Allot", "Allow", "Amate", "Amaze"
             , "Angel", "Anger", "Angle", "Angry", "Apple", "Apply", "Asset", "Atlas", "Audio", "Await", "Awake"
             , "Award", "Aware", "Awful", "Arson", "Bacon", "Badge", "Badly", "Baked", "Baken", "Baker", "Banks"
             , "Baths", "Beach", "Beams", "Beans", "Beany", "Beard", "Beare", "Bears", "Beast", "Benni", "Bingo"
@@ -28,21 +28,21 @@ public class GuessGameController implements Initializable {
             , "Ebola", "Ebike", "Ecard", "Egypt", "Eight", "Elbow", "Emits", "Emmas", "Engle", "Enjoy", "Ennet"
             , "Enemy", "Epoch", "Elona", "Equip", "Essay", "Euros", "Evens", "Event", "Every", "Evoke", "Exact"
             , "Excel", "Extra", "Faded", "Fader", "Fades", "Fagot", "Fails", "Faint", "Farts", "Fasts", "Fatal"
-            , "Fends", "Funny", "Feods", "Ferry", "Fesse", "Fetal", "Fiend", "Fiery", "Fifed", "Firth", "Fiscs",
-            "Fishy", "Fiver", "Fives", "Fixed", "Fixer", "Gabby", "Gable", "Gains", "Galax", "Galea", "Gamer"
+            , "Fends", "Funny", "Feods", "Ferry", "Fesse", "Fetal", "Fiend", "Fiery", "Fifed", "Firth", "Fiscs"
+            , "Fishy", "Fiver", "Fives", "Fixed", "Fixer", "Gabby", "Gable", "Gains", "Galax", "Galea", "Gamer"
             , "Gangs", "Gaped", "Gaper", "Gasol", "Gassy", "Gator", "Ghost", "Glean", "Gloom", "Glove", "Gloss"
             , "Gluey", "Gnarl", "Glass", "Happy", "House", "Heart", "Handy", "Honey", "Hurry", "Horde", "Heark"
             , "Hedge", "Hovel", "Hiker", "Henna", "Hazel", "Hunch", "Hitch", "Havoc", "Haiku", "Helix", "Hilly"
             , "Hives", "Hated", "Ickle", "Icons", "Idear", "Ideas", "Idola", "Idols", "Igloo", "Iglus", "Ilion"
-            , "Ilium", "Imels", "Imhos", "Infer", "Infix", "Impro", "Imshi", "Incel", "Incog", "Insue", "Intel",
-            "Inter", "Iring", "Irish", "Islam", "Islay", "Italy", "Itchy", "Ivory", "Ivrit", "Izmit", "Izzat"
+            , "Ilium", "Imels", "Imhos", "Infer", "Infix", "Impro", "Imshi", "Incel", "Incog", "Insue", "Intel"
+            , "Inter", "Iring", "Irish", "Islam", "Islay", "Italy", "Itchy", "Ivory", "Ivrit", "Izmit", "Izzat"
             , "Jelly", "Joint", "Jumbo", "Jawed", "Jager", "Jivey", "Jolly", "Jotty", "Judgy", "Joust", "Jutty"
             , "Jabot", "Jacks", "Jaded", "Jager", "Jains", "Jakes", "Jambu", "Janny", "Japes", "Jarks", "Jazzy"
-            , "Jeans", "Jerky", "Jiffy", "Jingo", "Jinks", "Jived", "Jiver", "Kakas", "Kakis", "Kappa", "Kaput",
-            "Kebab", "Kebar", "Ketch", "Ketol", "Kheda", "Kheth", "Knout", "Known", "Kooks", "Kooky", "Krona"
+            , "Jeans", "Jerky", "Jiffy", "Jingo", "Jinks", "Jived", "Jiver", "Kakas", "Kakis", "Kappa", "Kaput"
+            , "Kebab", "Kebar", "Ketch", "Ketol", "Kheda", "Kheth", "Knout", "Known", "Kooks", "Kooky", "Krona"
             , "Krone", "Lacer", "Laces", "Lacey", "Laith", "Laker", "Lakes", "Lands", "Lanes", "Larva", "Lased"
-            , "Laser", "Lases", "Later", "Latex", "Laver", "Laves", "Lawed", "Lawns", "Macro", "Madam", "Madly",
-            "Mafia", "Magic", "Mamma", "Mammy", "Manga", "Melon", "Mercy", "Merge", "Mango", "Match", "Matey"
+            , "Laser", "Lases", "Later", "Latex", "Laver", "Laves", "Lawed", "Lawns", "Macro", "Madam", "Madly"
+            , "Mafia", "Magic", "Mamma", "Mammy", "Manga", "Melon", "Mercy", "Merge", "Mango", "Match", "Matey"
             , "Mauve", "Maxim", "Mince", "Miner", "Moldy", "Money", "Month", "Moody", "Mummy", "Munch", "Mural"
             , "Night", "North", "Novel", "Nurse", "Nudge", "Nerve", "Nifty", "Notch", "Newts", "Nooks", "Nasal"
             , "Natal", "Nerve", "Nihil", "Nomer", "Nacho", "Nudie", "Nanny", "Nasty", "Noses", "Occur", "Ocean"
@@ -64,8 +64,8 @@ public class GuessGameController implements Initializable {
             , "Waker", "Waler", "Wames", "Wamus", "Wands", "Waney", "Wanes", "Wanks", "Wants", "Wards", "Wares"
             , "Warts", "Warty", "Waser", "Wasps", "Waspy", "Waste", "Water", "Waxen", "Waxer", "Weals", "Weans"
             , "Wears", "Xebec", "Xenic", "Xenon", "Xerox", "Xoana", "Xylic", "Xylol", "Xysti", "Xysts", "Yacht"
-            , "Yahoo", "Yodel", "Young", "Youth", "Yummy", "Yuppy", "Yexed", "Yexes", "Yarto", "Yauds", "Zaire",
-            "Zazen", "Zebec", "Zebra", "Zesty", "Ziggy", "Zilch", "Zincy", "Zingy", "Zippy", "Ziram", "Zonal"
+            , "Yahoo", "Yodel", "Young", "Youth", "Yummy", "Yuppy", "Yexed", "Yexes", "Yarto", "Yauds", "Zaire"
+            , "Zazen", "Zebec", "Zebra", "Zesty", "Ziggy", "Zilch", "Zincy", "Zingy", "Zippy", "Ziram", "Zonal"
             , "Zonky");
 
 
@@ -129,7 +129,7 @@ public class GuessGameController implements Initializable {
 
     public void generatedRadWord() {
         Random generator = new Random();
-        int value = generator.nextInt(radWords.size() - 1) + 0;
+        int value = generator.nextInt(radWords.size() - 1);
         radWord = radWords.get(value);
         radWord = radWord.toLowerCase();
     }

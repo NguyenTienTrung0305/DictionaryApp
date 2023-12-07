@@ -1,9 +1,5 @@
 package application.controller;
 
-import java.net.URL;
-import java.util.List;
-import java.util.ResourceBundle;
-
 import application.DAO.WordDAO;
 import application.api.TextToSpeech;
 import application.model.Dictionary;
@@ -16,6 +12,10 @@ import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
+
+import java.net.URL;
+import java.util.List;
+import java.util.ResourceBundle;
 
 public class SearchWordController implements Initializable {
 
@@ -160,29 +160,44 @@ public class SearchWordController implements Initializable {
             tfTargerWord.setText("");
             lbMeaningWord.setText("");
 
-
             WebEngine webEngine = taDescribeWord.getEngine();
             webEngine.loadContent("");
         }
-
     }
 
     // xu ly khi click vao 1 item trong list view
     public void MouseClickedLV() {
         Word selectedWord = lvWord.getSelectionModel().getSelectedItem();
+        String styleContent =
+                "<link rel=\"stylesheet\" " +
+                "type=\"text/css\" " +
+                "href=\"" + getClass().getResource(( "/application/style/webView.css")) + "\"/>";
+
         if (selectedWord != null) {
             tfTargerWord.setText(selectedWord.getWordTarget());
             lbMeaningWord.setText(selectedWord.getWordMeaning());
 
             WebEngine webEngine = taDescribeWord.getEngine();
-            webEngine.loadContent(selectedWord.getDescribeWord());
+            webEngine.loadContent(styleContent + selectedWord.getDescribeWord());
+
+            Dictionary.addRecentWord(selectedWord.getWordTarget());
+        }
+    }
+
+    public void addToFavoriteWordsList() {
+        // get the selected element
+        Word word = lvWord.getSelectionModel().getSelectedItem();
+
+        if (word != null) {
+            String wordTarget = word.getWordTarget();
+            Dictionary.addFavoriteWord(wordTarget);
         }
     }
 
     // speech word
-    public void SpeechWord(){
+    public void SpeechWord() {
         String content = tfTargerWord.getText();
-        if (content.equals("")){
+        if (content.equals("")) {
             return;
         }
         TextToSpeech.Speech(content);
