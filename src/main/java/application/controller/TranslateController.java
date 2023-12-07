@@ -11,6 +11,12 @@ import java.util.ResourceBundle;
 import java.util.concurrent.ExecutionException;
 
 public class TranslateController implements Initializable {
+
+    public String lanOne = "en";
+    public String textOne = "English";
+    public String lanTwo = "vi";
+    public String textTwo = "Vietnamese";
+
     // nút nói
     @FXML
     private Button btnSpeechToText;
@@ -83,7 +89,7 @@ public class TranslateController implements Initializable {
     // khi nhấn nút bắt đầu dịch
     public void StartTranslate() {
         try {
-            taVietnamese.setText(application.api.TranslateAPI.translate(taEnglish.getText(), "en", "vi"));
+            taVietnamese.setText(application.api.TranslateAPI.translate(taEnglish.getText(), lanOne, lanTwo));
         } catch (IOException e) {
 //            throw new RuntimeException(e);
         } catch (InterruptedException e) {
@@ -92,7 +98,17 @@ public class TranslateController implements Initializable {
     }
 
     // khi nhấn nút đổi chiều dịch
-    public void RotateTranslate(){};
+    public void RotateTranslate(){
+        String tmp = lanOne;
+        String tmp2 = textOne;
+        lanOne = lanTwo;
+        textOne = textTwo;
+        lanTwo = tmp;
+        textTwo = tmp2;
+
+        taEnglish.setPromptText(textOne);
+        taVietnamese.setPromptText(textTwo);
+    };
 
 
 
