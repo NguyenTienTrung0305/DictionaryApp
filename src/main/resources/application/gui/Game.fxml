@@ -12,7 +12,7 @@
    <children>
       <AnchorPane fx:id="choicesContainer" layoutX="120.0" layoutY="87.0" prefHeight="428.0" prefWidth="590.0" style="-fx-background-color: CCFFFF;">
          <children>
-            <AnchorPane layoutX="160.0" layoutY="30.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="90.0" prefWidth="80.0">
+            <AnchorPane layoutX="160.0" layoutY="30.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="90.0" prefWidth="80.0" styleClass="buttonGame" stylesheets="@../style/style.css">
                <children>
                   <Label alignment="CENTER" layoutY="65.0" prefHeight="17.0" prefWidth="80.0" styleClass="textFont" stylesheets="@../style/style.css" text="Check Typo" />
                   <Button fx:id="btnTypoGame" contentDisplay="GRAPHIC_ONLY" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#startTypoGame" prefHeight="90.0" prefWidth="80.0" style="-fx-background-color: transparent;" text="TypoGame" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-28.0">

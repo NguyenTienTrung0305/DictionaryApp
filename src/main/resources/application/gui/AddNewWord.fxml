@@ -12,24 +12,24 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="582.0" prefWidth="830.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.AddNewWordController">
     <children>
-        <Label layoutX="36.0" layoutY="38.0" prefHeight="28.0" prefWidth="194.0" text="Enter Your Word">
+        <Label layoutX="35.0" layoutY="40.0" prefHeight="28.0" prefWidth="194.0" text="Enter Your Word" textFill="#ffe664">
             <font>
-                <Font name="Bodoni MT Black" size="18.0" />
+                <Font name="Berlin Sans FB" size="24.0" />
             </font>
         </Label>
-        <TextField fx:id="tfNewWord" layoutX="36.0" layoutY="75.0" prefHeight="25.0" prefWidth="430.0" />
-        <Label layoutX="36.0" layoutY="123.0" prefHeight="28.0" prefWidth="287.0" text="Enter Your Translate Word">
+        <TextField fx:id="tfNewWord" layoutX="35.0" layoutY="75.0" prefHeight="25.0" prefWidth="430.0" />
+        <Label layoutX="35.0" layoutY="120.0" prefHeight="28.0" prefWidth="287.0" text="Enter Your Translate Word" textFill="#ffe664">
             <font>
-                <Font name="Bodoni MT Black" size="18.0" />
+                <Font name="Berlin Sans FB" size="24.0" />
             </font>
         </Label>
-        <TextField fx:id="tfTranslateWord" layoutX="36.0" layoutY="158.0" prefHeight="25.0" prefWidth="430.0" />
-        <Label layoutX="36.0" layoutY="202.0" prefHeight="28.0" prefWidth="365.0" text="Enter Your Description Word">
+        <TextField fx:id="tfTranslateWord" layoutX="35.0" layoutY="155.0" prefHeight="25.0" prefWidth="430.0" />
+        <Label layoutX="35.0" layoutY="195.0" prefHeight="28.0" prefWidth="365.0" text="Enter Your Description Word" textFill="#ffe664">
             <font>
-                <Font name="Bodoni MT Black" size="18.0" />
+                <Font name="Berlin Sans FB" size="24.0" />
             </font>
         </Label>
-        <TextArea fx:id="taDescribeWord" layoutX="36.0" layoutY="230.0" prefHeight="233.0" prefWidth="660.0" />
+        <TextArea fx:id="taDescribeWord" layoutX="35.0" layoutY="230.0" prefHeight="233.0" prefWidth="660.0" />
         <Button fx:id="BtnSaveNewWord" layoutX="41.0" layoutY="483.0" mnemonicParsing="false" onAction="#SaveNewWord" prefHeight="52.0" prefWidth="75.0" style="-fx-background-color: transparent;">
             <graphic>
                 <ImageView fitHeight="53.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
