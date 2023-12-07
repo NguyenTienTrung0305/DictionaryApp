@@ -7,6 +7,9 @@ module application {
     requires freetts;
     requires javafx.web;
     requires java.net.http;
+    requires client.sdk;
+    requires com.azure.ai.vision.common;
+    requires com.azure.ai.vision.imageanalysis;
 
     opens application to javafx.fxml;
     opens application.controller to javafx.fxml;
