@@ -5,6 +5,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 
 public class TranslateController {
+    private String from = "en";
+    private String to = "vi";
     // nút nói
     @FXML
     private Button btnSpeechToText;
@@ -55,10 +57,12 @@ public class TranslateController {
 
     // khi nhấn nút bắt đầu dịch
     public void StartTranslate() {
-        taVietnamese.setText(application.api.TranslareAPI.translate(taEnglish.getText(), "vi", "en"));
+        taVietnamese.setText(application.api.TranslareAPI.translate(taEnglish.getText(), from, to));
     }
 
     // khi nhấn nút đổi chiều dịch
-    public void RotateTranslate(){};
+    public void RotateTranslate() {
+        swap(from, to);
+    }
 
 }
